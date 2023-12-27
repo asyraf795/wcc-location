@@ -1,0 +1,15 @@
+spring:
+    config:
+        import: optional:configserver:test.com
+    datasource:
+        url: jdbc:mysql://localhost:3306/wc_test?allowPublicKeyRetrieval=TRUE
+        username: root
+        password: 96z9a3JiN3CN
+    flyway:
+        baseline-on-migrate: true
+        enabled: true
+        locations: classpath:db/migration
+        password: ${spring.datasource.password}
+        url: ${spring.datasource.url}
+        user: ${spring.datasource.username}
+        validate-on-migrate: true
